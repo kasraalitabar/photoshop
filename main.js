@@ -1,4 +1,4 @@
-const dot =document.querySelector("div:nth-child(1)");
+const dot =document.body;
 const color = document.querySelector(".color");
 // const range = document.querySelector(".range");
 let hex = "#000"
@@ -6,16 +6,14 @@ function handleInputChange(evt){
     hex =evt.target.value;
 }
 function print(evt){
-    console.log("hi")
-    const x=evt.x;
-    const y=evt.y;
+    const x=evt.offsetX;
+    const y=evt.offsetY;
     // const number=range.value
     dot.innerHTML+= `<div style="position:absolute;
     top:${y}px;
     left:${x}px;
     width:2px;
-    height;2px;
-    border-radius:50%;
+    height:2px;
     background-color:${hex};"></div>`;
     dot.addEventListener("mousedown",()=>{
         dot.addEventListener("mousemove",print);
